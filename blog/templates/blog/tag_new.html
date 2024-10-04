@@ -1,0 +1,16 @@
+<!-- blog/templates/blog/tag_new.html -->
+{% extends 'base.html' %}
+
+{% block title %}Tags{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Add a New Tag</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ tag_form.as_p }}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    <a href="{% url 'post_list' %}" class="btn btn-secondary">Back to List</a>
+</div>
+{% endblock %}
